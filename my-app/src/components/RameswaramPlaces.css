@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap');
+
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+  --font-sans: 'Rubik', sans-serif;
+  --font-serif: 'Cardo', serif;
+}
+
+.places {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  transition: transform var(--d) var(--e);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card .content {
+  position: relative;
+  z-index: 1;
+  transition: opacity var(--d) var(--e);
+}
+
+.card:hover .content {
+  opacity: 1;
+}
+
+.card .place-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: opacity var(--d) var(--e);
+}
+
+.card:hover .place-image {
+  opacity: 0.7; /* Slightly fade image on hover */
+}
+
+.title {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.copy {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.btn {
+  cursor: pointer;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #444; /* Darker shade on hover */
+}

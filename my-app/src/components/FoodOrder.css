@@ -1,0 +1,112 @@
+/* src/FoodOrder.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+}
+
+.food-order-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures any overflow is hidden */
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative; /* Positioning context for buttons */
+  overflow: hidden; /* Hides any overflow */
+  border-radius: 8px; /* Rounded corners for the slider */
+  padding-left: 20px; /* Adjust padding to move slider to the left */
+}
+
+.slider-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin: 0 10px;
+  font-size: 18px;
+  z-index: 1; /* Ensure buttons are above the image */
+  transition: background-color 0.3s;
+}
+
+.slider-button:hover {
+  background-color: #0056b3;
+}
+
+.slider-image {
+  max-width: 100%;
+  max-height: 200px; /* Set a max height to keep images contained */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  display: block; 
+  padding-right: 800px;/* Ensures no extra space below the image */
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2px;
+}
+
+.order-form label {
+  margin: 2px 0 2px;
+  font-weight: bold;
+}
+
+.order-form input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.order-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.submit-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 600px) {
+  .slider-button {
+      font-size: 16px;
+      padding: 8px 12px;
+  }
+
+  .submit-button {
+      font-size: 16px;
+  }
+}

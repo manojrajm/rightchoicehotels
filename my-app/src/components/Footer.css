@@ -1,0 +1,119 @@
+.footer {
+    background: linear-gradient(135deg, #3a3a3a, #1a1a1a); /* Gradient background */
+    color: #f9f9f9; /* Light text color */
+    padding: 3rem 1rem; /* Generous padding */
+    font-family: 'Arial', sans-serif; /* Font family */
+    position: relative; /* For potential positioning effects */
+    overflow: hidden; /* Hide overflow for visual appeal */
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    margin-bottom: 2rem; /* Space below the content */
+  }
+  
+  .contact-info {
+    flex: 1; /* Allows it to grow */
+    min-width: 250px; /* Minimum width */
+    margin-right: 1rem; /* Space between columns */
+  }
+  
+  .contact-info h3 {
+    margin-bottom: 1rem; /* Space below heading */
+    font-size: 1.5rem; /* Slightly larger heading */
+    text-transform: uppercase; /* Uppercase text */
+    border-bottom: 2px solid #f39c12; /* Underline effect */
+    padding-bottom: 0.5rem; /* Space below heading */
+  }
+  
+  .contact-info p {
+    margin: 0.5rem 0; /* Space between paragraphs */
+    font-size: 1rem; /* Font size for paragraphs */
+  }
+  
+  .contact-info a {
+    color: #f39c12; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Transition effect */
+  }
+  
+  .contact-info a:hover {
+    color: #e67e22; /* Change color on hover */
+  }
+  
+  .map {
+    flex: 1; /* Allows it to grow */
+    min-width: 300px; /* Minimum width */
+    margin-top: -5px;
+    padding-left: 1rem; /* Adjust padding */
+  }
+  
+  .map iframe {
+    border-radius: 8px; /* Rounded corners for the iframe */
+    width: 100%; /* Full width for responsiveness */
+    height: 200px; /* Fixed height for mobile */
+  }
+  
+  .ads {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 1.5rem; /* Padding for ads section */
+    margin-top: 2rem; /* Space above ads */
+    text-align: center; /* Centering text */
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  .google-ads {
+    height: 200px; /* Height for ads placeholder */
+    background-color: #444; /* Placeholder background */
+    display: flex;
+    align-items: center; /* Centering content vertically */
+    justify-content: center; /* Centering content horizontally */
+    color: #fff; /* White text for placeholder */
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  .footer-bottom {
+    text-align: center; /* Center the bottom text */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Top border */
+    padding-top: 1rem; /* Space above text */
+    margin-top: 2rem; /* Space above this section */
+  }
+  
+  .footer-bottom p {
+    margin: 0; /* Remove margin */
+    font-size: 0.9rem; /* Slightly smaller font size */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .footer-content {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center items */
+      padding: 0 1rem; /* Padding for smaller screens */
+    }
+  
+    .contact-info {
+      margin-right: 0; /* Remove margin on mobile */
+      text-align: center; /* Center text on mobile */
+    }
+  
+    .map {
+      margin-top: 1rem; /* Space above map */
+      padding-left: 0; /* Reset padding */
+    }
+  
+    .map iframe {
+      height: 200px; /* Maintain height for iframe */
+    }
+  
+    .ads {
+      padding: 1rem; /* Reduce padding for ads on mobile */
+    }
+  
+    .footer-bottom p {
+      font-size: 0.8rem; /* Smaller font size for mobile */
+    }
+  }
+  

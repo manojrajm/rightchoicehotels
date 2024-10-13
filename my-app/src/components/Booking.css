@@ -1,0 +1,161 @@
+/* Booking.css */
+.booking-container {
+    max-width: 800px; /* Increased max-width for larger screens */
+    margin: 20px auto;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.booking-options {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+    gap: 10px; /* Space between buttons */
+    margin-bottom: 20px;
+}
+
+.booking-button {
+    padding: 12px 0;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.booking-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.booking-form {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+    padding: 0 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.booking-form.show {
+    opacity: 1;
+    max-height: 920px; /* Adjusted max height for better visibility */
+    padding-top: 20px; /* Add padding for better spacing */
+}
+
+.booking-form.hide {
+    opacity: 0;
+    max-height: 0;
+    padding: 0; /* Remove padding to avoid extra space */
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px; /* Added margin for better spacing */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.submit-button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Ensure full width for the button */
+}
+
+.submit-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .booking-options {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Space between buttons */
+        margin: auto;
+    }
+
+    .booking-button {
+        width: 100%; /* Full width on mobile */
+    }
+
+    .booking-form {
+        padding: 10px 15px; /* Adjust padding for smaller screens */
+    }
+
+    label {
+        margin: 5px 0; /* Reduced margin for better spacing */
+    }
+
+    input, select {
+        padding: 10px; /* Slightly smaller padding for inputs */
+        font-size: 15px; /* Slightly smaller font size */
+    }
+
+    .submit-button {
+        padding: 10px 15px; /* Adjust button size */
+        font-size: 15px; /* Consistent button font size */
+    }
+}
+
+/* Additional Media Queries for Larger Screens (Laptops) */
+@media (min-width: 769px) {
+    .booking-options {
+        flex-direction: row; /* Align buttons horizontally on larger screens */
+    }
+
+    .booking-button {
+        flex: 1; /* Equal space for each button */
+        margin: 0 10px; /* Add horizontal margin between buttons */
+    }
+
+    .booking-form {
+        padding: 20px; /* More padding for larger screens */
+    }
+
+    input, select {
+        padding: 12px; /* Maintain larger padding for inputs */
+        font-size: 16px; /* Maintain font size */
+    }
+
+    .submit-button {
+        padding: 12px 20px; /* Maintain button size */
+    }
+
+    /* Ensure there's enough space for the submit button */
+    .booking-form {
+        padding-bottom: 30px; /* Add padding at the bottom to ensure the button is visible */
+    }
+}

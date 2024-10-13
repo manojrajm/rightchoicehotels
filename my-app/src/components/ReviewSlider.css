@@ -1,0 +1,114 @@
+/* src/ReviewSlider.css */
+body {
+    margin: 0; /* Remove default margin */
+    font-family: 'Arial', sans-serif; /* Set default font */
+}
+
+.slider {
+    overflow: hidden;
+    width: 100vw; /* Full viewport width */
+    margin: 0; /* Remove any default margin */
+    text-align: center; /* Center align the heading */
+    position: relative; /* Position for absolute elements */
+}
+
+.slider h2 {
+    font-size: 2em;
+    color: #5c1010; /* Darker color for better contrast */
+    margin: 20px 0; /* Space around the heading */
+    position: absolute; /* Fix position at the top */
+    top: 20px; /* Space from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Centering adjustment */
+    z-index: 2; /* Ensure heading is above cards */
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth slide effect */
+}
+
+/* Card styles with glassmorphism effect */
+.card {
+    min-width: 200px; /* Adjust this value to reduce card size */
+    flex: 1; /* Allow the cards to grow */
+    margin: 20px; /* Space between cards */
+    padding: 20px; /* Padding inside cards */
+    border-radius: 15px; /* Rounded corners */
+    background: rgba(255, 255, 255, 0.1); /* Light background with transparency */
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    text-align: center; /* Center align text */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+    color: aqua;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.card img {
+    width: 100%; /* Make image responsive */
+    height: auto;
+    border-radius: 10px; /* Optional: round corners of images */
+}
+
+.card h3 {
+    font-weight: bold; /* Bold font for names */
+    color: #333; /* Dark color for contrast */
+    margin: 10px 0; /* Space around name */
+}
+
+.card p {
+    color: #ffffff; /* Change message text color for visibility */
+    margin: 10px 0; /* Space around message */
+}
+
+.rating {
+    font-size: 1.5em; /* Adjust size of ratings */
+    color: #FFD700; /* Gold color for stars */
+}
+
+/* Navigation buttons styles */
+.nav-button {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1; /* Ensure buttons are above cards */
+}
+
+.nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.1); /* Slight increase on hover */
+}
+
+.prev {
+    left: 10px; /* Position to the left */
+}
+
+.next {
+    right: 10px; /* Position to the right */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .card {
+        min-width: 150px; /* Smaller cards on mobile */
+    }
+    
+    .slider h2 {
+        font-size: 1.5em; /* Smaller heading on mobile */
+    }
+}
+
+
+

@@ -1,0 +1,145 @@
+body {
+    background-color: #f0f4f8; /* Light background for a soothing effect */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: auto;
+    padding: 10px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 20px; /* Added margin for spacing */
+}
+
+.about-text {
+    flex: 1;
+    padding: 40px;
+    background: linear-gradient(to bottom right, #ffffff, #f9f9f9); /* Subtle gradient */
+}
+
+.about-text h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.about-text h2 {
+    font-size: 2em;
+    color: #2980b9;
+    margin-bottom: 20px;
+}
+
+.about-text h3 {
+    font-size: 1.5em;
+    color: #34495e;
+    margin-top: 20px;
+}
+
+.about-text p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.benefits-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.benefits-list li {
+    margin: 10px 0; /* Increased margin for better spacing */
+    font-size: 1.2em;
+    padding-left: 1.5em; /* Added padding for visual appeal */
+    position: relative;
+}
+
+.benefits-list li::before {
+    content: "✔️"; /* Checkmark emoji for a positive touch */
+    position: absolute;
+    left: 0; /* Align with text */
+}
+
+.about-images {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px; /* Added padding for spacing */
+    background-color: #fff; /* Ensure background contrasts with images */
+}
+
+.slides {
+    width: 100%;
+    height: 300px; /* Set a fixed height for desktop */
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Added rounded corners */
+}
+
+.slide-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease-in-out;
+    display: flex; /* Center the content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+input[type="radio"] {
+    display: none; /* Hide radio buttons */
+}
+
+input[type="radio"]:checked + .slide-container {
+    opacity: 1; /* Show the selected slide */
+}
+
+.slide img {
+    padding-top: 200px;
+    max-width: 100%; /* Ensure the image does not exceed the container */
+    max-height: 100%; /* Ensure the image does not exceed the container */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .about-images {
+        padding: 5px; /* Reduced padding for smaller screens */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .slides {
+        height: 200px; /* Adjust height for mobile */
+    }
+
+    .slide-container {
+        height: 100%; /* Full height for container */
+    }
+
+    .slide img {
+        width: 100vw;
+        padding-left: 200px;
+        align-items: center;
+        justify-content: center;
+        
+    }
+}

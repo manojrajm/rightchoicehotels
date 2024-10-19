@@ -1,29 +1,32 @@
 // src/components/ReviewSlider.js
 import React, { useState } from 'react';
 import './ReviewSlider.css';
-
+import Gautham from'../images/review1.jpeg';
+import Praveen from'../images/review2.jpeg';
+import Joseph from '../images/review3.jpeg';
+import Murugan from '../images/review4.jpeg';
 const reviews = [
     {
         name: 'Gautham',
-        image: 'https://via.placeholder.com/150',
+        image: Gautham ,
         message: 'Loved my stay! Highly recommend this hotel for its comfort and hospitality.',
         rating: 5,
     },
     {
         name: 'Praveen',
-        image: 'https://via.placeholder.com/150',
+        image: Praveen,
         message: 'Great service with friendly staff made my visit enjoyable.',
         rating: 4,
     },
     {
         name: 'Joseph',
-        image: 'https://via.placeholder.com/150',
+        image: Joseph,
         message: 'Rooms were comfortable and impeccably clean.',
         rating: 5,
     },
     {
         name: 'Murugan',
-        image: 'https://via.placeholder.com/150',
+        image: Murugan,
         message: 'A fantastic experience that exceeded my expectations!',
         rating: 5,
     }

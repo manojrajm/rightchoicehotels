@@ -55,7 +55,7 @@ const Booking = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          recipient: "gauthamtamizha007@gmail.com", // Replace with actual recipient's email
+          recipient: "rightchoicehotels@gmail.com", // Replace with actual recipient's email
           subject: "New Booking Request",
           body: `
           <html>
@@ -142,6 +142,10 @@ const Booking = () => {
             </body>
           </html>
           `.trim(),
+          headers: {
+            'From': 'Manojraj <gauthamtamizha007@gmail.com>', // Custom From field
+            'Reply-To': 'rightchoice<rightchoicehotels@gmail.com>', // Custom Reply-To field
+          },
         }),
       });
   
@@ -229,7 +233,7 @@ const Booking = () => {
 
   return (
     <div className="booking-container">
-      <h1>Choose Your Booking Type</h1>
+      <h1 style={{color:'yellow'}}>Choose Your Booking Type</h1>
       <div className="booking-options">
         <button className="booking-button" onClick={handleTravelBooking}>
           Travel Booking

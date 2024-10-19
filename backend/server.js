@@ -23,8 +23,8 @@ app.post('/api/send-email', (req, res) => {
   const { recipient, subject, body, from } = req.body; // Extract 'from' from the request
 
   const mailOptions = {
-    from: from, // Use the user's email provided in the request
-    to: recipient || 'gauthamtamizha007@gmail.com', // Send to your email by default
+    from: 'gauthamtamizha007@gmail.com', // Use the user's email provided in the request
+    to: recipient || 'rightchoicehotels@gmail.com', // Send to your email by default
     subject: subject,
     html: body,
   };

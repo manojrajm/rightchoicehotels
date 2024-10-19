@@ -5,10 +5,14 @@ import './Hero.css';
 const images = [
     
     'https://th.bing.com/th/id/OIP.lgCKC0vvPYwhv7AJllRe0QHaEw?rs=1&pid=ImgDetMain',
+    'https://wallpapercave.com/wp/wp9198792.jpg',
+
     'https://wallpapercave.com/wp/wp9920427.jpg',
+    'https://i.pinimg.com/564x/cb/0f/f8/cb0ff83f94d69457d1313893ffd4fd77.jpg',
     'https://www.treebo.com/blog/wp-content/uploads/2018/08/16-Stellar-Places-to-Visit-in-Rameshwaram.jpg',
     'https://www.rightchoicehotels.in/img/smallbanner/DSC_8949.JPG',
-    'https://images.pexels.com/photos/4141715/pexels-photo-4141715.jpeg'
+    'http://localhost:3000/static/media/nandi2.2c1ba8ba06e07bbba267.jpeg',
+    
 ];
 
 const Hero = () => {

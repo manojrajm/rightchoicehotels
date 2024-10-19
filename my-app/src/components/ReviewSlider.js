@@ -1,85 +1,69 @@
-// src/ReviewSlider.js
-import React, { useState, useEffect } from 'react';
-import { DndProvider, useDrag, useDrop } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
+// src/components/ReviewSlider.js
+import React, { useState } from 'react';
 import './ReviewSlider.css';
 
-const CARD_TYPE = 'CARD';
-
-const Card = ({ card, index, moveCard, setCurrentIndex }) => {
-    const [, ref] = useDrag({
-        type: CARD_TYPE,
-        item: { index },
-    });
-
-    const [, drop] = useDrop({
-        accept: CARD_TYPE,
-        hover(item) {
-            if (item.index !== index) {
-                moveCard(item.index, index);
-                item.index = index;
-
-                // Update currentIndex to center the moved card
-                setCurrentIndex(index);
-            }
-        },
-    });
-
-    return (
-        <div ref={(node) => ref(drop(node))} className="card">
-            <img src={card.image} alt={card.name} />
-            <h3>{card.name}</h3>
-            <p>{card.message}</p>
-            <div className="rating">{'★'.repeat(card.rating) + '☆'.repeat(5 - card.rating)}</div>
-        </div>
-    );
-};
+const reviews = [
+    {
+        name: 'Gautham',
+        image: 'https://via.placeholder.com/150',
+        message: 'Loved my stay! Highly recommend this hotel for its comfort and hospitality.',
+        rating: 5,
+    },
+    {
+        name: 'Praveen',
+        image: 'https://via.placeholder.com/150',
+        message: 'Great service with friendly staff made my visit enjoyable.',
+        rating: 4,
+    },
+    {
+        name: 'Joseph',
+        image: 'https://via.placeholder.com/150',
+        message: 'Rooms were comfortable and impeccably clean.',
+        rating: 5,
+    },
+    {
+        name: 'Murugan',
+        image: 'https://via.placeholder.com/150',
+        message: 'A fantastic experience that exceeded my expectations!',
+        rating: 5,
+    }
+    
+];
 
 const ReviewSlider = () => {
-    const [cards, setCards] = useState([
-        { name: 'Person 1', image: 'https://via.placeholder.com/150', message: 'Staying at this hotel was an incredible experience! The staff were friendly, the rooms were spacious, and the amenities exceeded my expectations.', rating: 4 },
-        { name: 'Person 2', image: 'https://via.placeholder.com/150', message: 'I absolutely loved my stay here! The atmosphere was welcoming, the food was delicious, and the location was perfect for exploring the area', rating: 5 },
-        { name: 'Person 3', image: 'https://via.placeholder.com/150', message: 'My stay was decent, but there were a few issues. The room was comfortable, but the service could have been better.', rating: 3 },
-        { name: 'Person 4', image: 'https://via.placeholder.com/150', message: 'Highly recommend!', rating: 5 },
-        { name: 'Person 5', image: 'https://via.placeholder.com/150', message: 'Very nice hotel with excellent amenities. The only drawback was a slight delay in check-in, but everything else was top-notch', rating: 4 },
-    ]);
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, [cards.length]);
-
-    const moveCard = (fromIndex, toIndex) => {
-        const updatedCards = [...cards];
-        const [movedCard] = updatedCards.splice(fromIndex, 1);
-        updatedCards.splice(toIndex, 0, movedCard);
-        setCards(updatedCards);
-    };
-
     const goToNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
     };
 
     const goToPrevious = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + cards.length) % cards.length);
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
     };
 
     return (
-        <DndProvider backend={HTML5Backend}>
-            <div className="slider">
-                <h1>Customer Reviews</h1>
-                <div className="slider-container" style={{ display: 'flex', transform: `translateX(-${(currentIndex * 100) / cards.length}%)` }}>
-                    {cards.map((card, index) => (
-                        <Card key={index} index={index} card={card} moveCard={moveCard} setCurrentIndex={setCurrentIndex} />
-                    ))}
-                </div>
-                <button className="nav-button left" onClick={goToPrevious}>❮</button>
-                <button className="nav-button right" onClick={goToNext}>❯</button>
+        <div className="review-slider">
+                        <h2 className="slider-title">What Our Guests Say</h2> {/* Title added here */}
+
+            <div className="slider-container" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+                {reviews.map((review, index) => (
+                    <div key={index} className="review-card">
+                        <img src={review.image} alt={review.name} className="review-image" />
+                        <h3>{review.name}</h3>
+                        <p>{review.message}</p>
+                        <div className="rating">
+                            {'★'.repeat(review.rating) + '☆'.repeat(5 - review.rating)}
+                        </div>
+                    </div>
+                ))}
             </div>
-        </DndProvider>
+            <button className="nav-button left" onClick={goToPrevious}>
+                ❮
+            </button>
+            <button className="nav-button right" onClick={goToNext}>
+                ❯
+            </button>
+        </div>
     );
 };
 

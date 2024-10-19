@@ -1,114 +1,106 @@
-/* src/ReviewSlider.css */
-body {
-    margin: 0; /* Remove default margin */
-    font-family: 'Arial', sans-serif; /* Set default font */
-}
+/* src/components/ReviewSlider.css */
 
-.slider {
+.review-slider {
+    position: relative;
+    width: 100vw; /* Full width of the viewport */
+    max-width: 100%; /* Ensure it doesn't exceed viewport width */
+    margin: 20px; /* Remove margin */
+    padding: 30px 0; /* Add some vertical padding */
     overflow: hidden;
-    width: 100vw; /* Full viewport width */
-    margin: 0; /* Remove any default margin */
-    text-align: center; /* Center align the heading */
-    position: relative; /* Position for absolute elements */
-}
-
-.slider h2 {
-    font-size: 2em;
-    color: #5c1010; /* Darker color for better contrast */
-    margin: 20px 0; /* Space around the heading */
-    position: absolute; /* Fix position at the top */
-    top: 20px; /* Space from the top */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Centering adjustment */
-    z-index: 2; /* Ensure heading is above cards */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-image: url('https://i.ibb.co/PTJDkgb/testimonials.jpg'); /* Background image */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the background image */
 }
 
 .slider-container {
     display: flex;
-    transition: transform 0.5s ease-in-out; /* Smooth slide effect */
+    transition: transform 0.5s ease-in-out;
+    align-items: center; /* Center items vertically */
 }
 
-/* Card styles with glassmorphism effect */
-.card {
-    min-width: 200px; /* Adjust this value to reduce card size */
-    flex: 1; /* Allow the cards to grow */
-    margin: 20px; /* Space between cards */
-    padding: 20px; /* Padding inside cards */
-    border-radius: 15px; /* Rounded corners */
-    background: rgba(255, 255, 255, 0.1); /* Light background with transparency */
-    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
-    text-align: center; /* Center align text */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    transition: transform 0.3s ease; /* Smooth scaling effect */
-    color: aqua;
+.review-card {
+    min-width: 300px; /* Set a minimum width for the card */
+    max-width: 80%; /* Ensure the card doesn't exceed 80% of the width */
+    padding: 20px;
+    justify-content: space-between;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2); /* More transparent background */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    margin: 40px;
 }
 
-.card:hover {
-    transform: scale(1.05); /* Slightly increase size on hover */
+.review-card:hover {
+    transform: scale(1.02);
 }
 
-.card img {
-    width: 100%; /* Make image responsive */
-    height: auto;
-    border-radius: 10px; /* Optional: round corners of images */
+.review-image {
+    width: 80px; /* Adjust image size */
+    height: 80px; /* Adjust image size */
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Cover the area without distortion */
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
 }
 
-.card h3 {
-    font-weight: bold; /* Bold font for names */
-    color: #333; /* Dark color for contrast */
-    margin: 10px 0; /* Space around name */
-}
-
-.card p {
-    color: #ffffff; /* Change message text color for visibility */
-    margin: 10px 0; /* Space around message */
+.review-image:hover {
+    border-color: #ff9800;
 }
 
 .rating {
-    font-size: 1.5em; /* Adjust size of ratings */
-    color: #FFD700; /* Gold color for stars */
+    font-size: 20px;
+    color: #ff9800;
+    margin: 10px 0;
 }
 
-/* Navigation buttons styles */
 .nav-button {
     position: absolute;
-    top: 50%; /* Center vertically */
+    top: 50%;
     transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.5);
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s, transform 0.3s;
-    z-index: 1; /* Ensure buttons are above cards */
+    font-size: 24px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s;
 }
 
 .nav-button:hover {
-    background-color: rgba(255, 255, 255, 0.7);
-    transform: scale(1.1); /* Slight increase on hover */
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(1.1);
 }
 
-.prev {
-    left: 10px; /* Position to the left */
+.left {
+    left: 10px;
 }
 
-.next {
-    right: 10px; /* Position to the right */
+.right {
+    right: 10px;
 }
 
-/* Responsive styles */
-@media (max-width: 600px) {
-    .card {
-        min-width: 150px; /* Smaller cards on mobile */
-    }
-    
-    .slider h2 {
-        font-size: 1.5em; /* Smaller heading on mobile */
-    }
+.slider-title {
+    font-size: 2em;
+    color: #f7f7f7;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-
-
+.slider-subtitle {
+    font-size: 1.2em;
+    color: rgba(245, 245, 245, 0.8);
+    text-align: center;
+    margin-bottom: 20px;
+}

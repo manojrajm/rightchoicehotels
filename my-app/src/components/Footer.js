@@ -43,13 +43,6 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="ads">
-        <h3>Sponsored Ads</h3>
-        <div className="google-ads">
-          {/* Replace with actual Google Ads code */}
-          <p>Google Ads Placeholder</p>
-        </div>
-      </div>
 
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} RightChoiceHotels. All rights reserved.</p>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './RameswaramPlaces.css';
-import pamban from '../images/Pamban.jpeg'; // Ensure this path is correct
+import pamban from '../images/Pamban.jpeg'; 
 
 const RameswaramPlaces = () => {
   const places = [

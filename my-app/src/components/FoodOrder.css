@@ -1,20 +1,19 @@
 /* src/FoodOrder.css */
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  margin: 0;
-  padding: 20px;
-}
 
 .food-order-container {
   max-width: 600px;
   margin: auto;
   padding: 10px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-left: 80px; /* Adjust padding to move slider to the left */
+  background-image: url('../images/bg5.jpg'); /* Add your background image */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the background image *//* Make background semi-transparent */
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* Ensures any overflow is hidden */
+  color:#ffff;
 }
 
 h1 {
@@ -25,23 +24,23 @@ h1 {
 
 .slider {
   display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 20px;
   position: relative; /* Positioning context for buttons */
   overflow: hidden; /* Hides any overflow */
   border-radius: 8px; /* Rounded corners for the slider */
-  padding-left: 20px; /* Adjust padding to move slider to the left */
+ 
 }
 
 .slider-button {
-  background-color: #007bff;
+  background-color: rgba(0, 86, 179, 0.8); /* Make button background semi-transparent */
   color: white;
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
   cursor: pointer;
   margin: 0 10px;
+  width: 40px; /* Adjust width */
+  height: 40px;
   font-size: 18px;
   z-index: 1; /* Ensure buttons are above the image */
   transition: background-color 0.3s;
@@ -58,13 +57,15 @@ h1 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   object-fit: cover; /* Ensures the image covers the area without distortion */
   display: block; 
-  padding-right: 800px;/* Ensures no extra space below the image */
 }
 
 .order-form {
   display: flex;
   flex-direction: column;
   margin-top: 2px;
+ margin-right: 40px;
+  padding: 15px; /* Add padding for form */
+  border-radius: 8px; /* Rounded corners for the form */
 }
 
 .order-form label {
@@ -102,11 +103,30 @@ h1 {
 
 @media (max-width: 600px) {
   .slider-button {
-      font-size: 16px;
-      padding: 8px 12px;
+    font-size: 16px;
+    padding: 8px 12px;
   }
 
   .submit-button {
-      font-size: 16px;
+    font-size: 16px;
+  }
+
+  .food-order-container {
+    margin: 0 25px;
+  }
+
+  .slider {
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    justify-content: center; /* Center content */
+    width: 100%; /* Allow full width */
+    height: 200px; /* Maintain height */
+  }
+
+  .slider-image {
+    padding: 0; /* Remove padding */
+    max-width: 100%; /* Ensure it uses available width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image */
   }
 }

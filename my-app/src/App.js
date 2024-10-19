@@ -10,23 +10,35 @@ import RameswaramPlaces from './components/RameswaramPlaces';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import ReviewSlider from './components/ReviewSlider';
+import Testimonials from './components/Testimonials';
+import TravelPartners from './components/TravelPartners';
+
+
+
+
+
 
 
 
 const App = () => {
     return (
-        <div>
+        <>
             <Header />
             <Hero/>
             <About/>
             <Rooms/>
             <Booking/>
-            <FoodOrder/>
+            {/* <FoodOrder/> */}
+            {/* <Testimonials/> */}
             <RameswaramPlaces/>
+            <TravelPartners/>
             <ReviewSlider/>
+
+           
+           
             <Footer/>
            <WhatsAppButton/>
-        </div>
+        </>
     );
 };
 

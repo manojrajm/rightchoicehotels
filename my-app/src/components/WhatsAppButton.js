@@ -7,7 +7,7 @@ import './WhatsAppButton.css'; // Create a CSS file for styling
 
 const WhatsAppButton = () => {
     const phoneNumber = '7871140888'; // Your WhatsApp number without the '+'
-    const callNumber = '7871140888'; // Your call number without the '+'
+    const callNumber = '7200255666'; // Your call number without the '+'
 
     const handleWhatsAppClick = () => {
         window.open(`https://wa.me/${phoneNumber}`, '_blank');

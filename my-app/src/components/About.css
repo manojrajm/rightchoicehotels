@@ -1,145 +1,147 @@
-body {
-    background-color: #f0f4f8; /* Light background for a soothing effect */
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 0;
+/* About.css */
+
+.about {
+    padding: 60px 0;
+    background-image: url('https://i.pinimg.com/originals/be/14/1b/be141b5f8bfd10a522176b7c612b9fd0.gif'); /* Replace with the direct image URL */
+    background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+    background-position: center; /* Center the image */
+    background-size: cover; /* Ensure the background covers the entire area */
+    position: relative; /* Allows positioning of pseudo-elements if needed */
+}
+
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.4); /* Overlay for translucency */
+    z-index: 1; /* Ensure it stays below the content */
 }
 
 .container {
+    max-width: 1200px;
     margin: auto;
-    padding: 10px;
+    padding: 20px;
+    position: relative; /* Allow the container to overlap the overlay */
+    z-index: 2; /* Ensure it stays above the overlay */
 }
 
 .about-content {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    margin-top: 20px; /* Added margin for spacing */
+    flex-wrap: wrap;
 }
 
-.about-text {
+.about-text, .about-images {
     flex: 1;
-    padding: 40px;
-    background: linear-gradient(to bottom right, #ffffff, #f9f9f9); /* Subtle gradient */
+    max-width: 45%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.4); /* Translucent background */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
 }
 
-.about-text h1 {
+.about-text:hover, .about-images:hover {
+    transform: scale(1.02);
+}
+
+.about-text h1, .about-images h1 {
     font-size: 2.5em;
-    color: #2c3e50;
+    color: #343a40;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .about-text h2 {
     font-size: 2em;
-    color: #2980b9;
+    color: #495057;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-.about-text h3 {
-    font-size: 1.5em;
-    color: #34495e;
-    margin-top: 20px;
-}
-
-.about-text p {
-    margin: 10px 0;
+.about-text p, .about-images p {
     line-height: 1.6;
+    margin-bottom: 15px;
+    color: #6c757d;
 }
 
-.benefits-list {
+.benefits-list, .nandi-features {
     list-style-type: none;
     padding: 0;
-    margin: 20px 0;
 }
 
-.benefits-list li {
-    margin: 10px 0; /* Increased margin for better spacing */
-    font-size: 1.2em;
-    padding-left: 1.5em; /* Added padding for visual appeal */
-    position: relative;
+.benefits-list li, .nandi-features li {
+    font-size: 18px;
+    margin: 30px 0;
+    transition: transform 0.3s;
 }
 
-.benefits-list li::before {
-    content: "✔️"; /* Checkmark emoji for a positive touch */
-    position: absolute;
-    left: 0; /* Align with text */
-}
-
-.about-images {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 10px; /* Added padding for spacing */
-    background-color: #fff; /* Ensure background contrasts with images */
+.benefits-list li:hover, .nandi-features li:hover {
+    transform: translateY(-5px);
 }
 
 .slides {
-    width: 100%;
-    height: 300px; /* Set a fixed height for desktop */
     position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    height: 300px; /* Adjust height as needed */
     overflow: hidden;
-    border-radius: 10px; /* Added rounded corners */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .slide-container {
+    display: none;
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 0; /* Start hidden */
-    transition: opacity 1s ease-in-out;
-    display: flex; /* Center the content */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
 }
 
 input[type="radio"] {
-    display: none; /* Hide radio buttons */
+    display: none;
 }
 
 input[type="radio"]:checked + .slide-container {
-    opacity: 1; /* Show the selected slide */
+    display: block;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease-in-out;
 }
 
 .slide img {
-    padding-top: 200px;
-    max-width: 100%; /* Ensure the image does not exceed the container */
-    max-height: 100%; /* Ensure the image does not exceed the container */
-    object-fit: cover; /* Maintain aspect ratio */
-    border-radius: 5px; /* Rounded corners */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 15px;
+    transition: transform 0.5s ease;
 }
 
-/* Mobile Responsive Styles */
+.slide-container:hover .slide img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
 @media (max-width: 768px) {
     .about-content {
-        flex-direction: column; /* Stack elements vertically */
-    }
-
-    .about-images {
-        padding: 5px; /* Reduced padding for smaller screens */
-        height: auto; /* Allow height to adjust */
-    }
-
-    .slides {
-        height: 200px; /* Adjust height for mobile */
-    }
-
-    .slide-container {
-        height: 100%; /* Full height for container */
-    }
-
-    .slide img {
-        width: 100vw;
-        padding-left: 200px;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        
+    }
+    .about-text, .about-images {
+        max-width: 100%;
+        margin: 0 0 20px;
     }
 }

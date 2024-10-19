@@ -49,7 +49,7 @@ const Booking = () => {
 
   const sendMail = async (details) => {
     try {
-      const response = await fetch('http://localhost:5000/api/send-email', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const Booking = () => {
           body: `
           <html>
             <body>
-              <h2>Hello Right Choice Hotels,</h2>
+              <h2>Hello Right Choice Hotel,</h2>
               <p>You have a new booking request from <strong>${details.from_name}</strong>.</p>
               <h3>Room Booking Details:</h3>
               <table border="1" style="border-collapse: collapse; width: 100%;">

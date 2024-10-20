@@ -10,7 +10,6 @@ import RameswaramPlaces from './components/RameswaramPlaces';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import ReviewSlider from './components/ReviewSlider';
-import Testimonials from './components/Testimonials';
 import TravelPartners from './components/TravelPartners';
 
 
@@ -29,7 +28,7 @@ const App = () => {
             <Rooms/>
             <Booking/>
             {/* <FoodOrder/> */}
-            {/* <Testimonials/> */}
+         
             <RameswaramPlaces/>
             <TravelPartners/>
             <ReviewSlider/>

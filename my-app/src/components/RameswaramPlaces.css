@@ -101,6 +101,6 @@ h1 {
   .card{
     align-items: center;
     justify-content: center;
-    margin-right: 40px;
+    /* margin-right: 40px; */
   }
 }

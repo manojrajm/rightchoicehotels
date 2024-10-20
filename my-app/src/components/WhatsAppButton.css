@@ -2,7 +2,7 @@
 .whatsapp-button {
     position: fixed;
     bottom: 80px; /* Adjust position */
-    right: 20px;  /* Adjust position */
+    right: 35px;  /* Adjust position */
     background-color: #25D366; /* WhatsApp color */
     color: white;
     border-radius: 50%;
@@ -16,7 +16,7 @@
 .call-button {
     position: fixed;
     bottom: 20px; /* Adjust position */
-    right: 20px;  /* Adjust position */
+    right: 35px;  /* Adjust position */
     background-color: #34b7f1; /* Call button color */
     color: white;
     border-radius: 50%;

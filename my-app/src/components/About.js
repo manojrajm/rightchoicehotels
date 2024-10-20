@@ -19,7 +19,7 @@ const About = () => {
     }, []);
 
     return (
-        <main className="about">
+        <main className="about"id='about'>
             <div className="container">
                 <div className="about-content">
                     <div className="about-text hotel">

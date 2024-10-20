@@ -25,10 +25,10 @@ const reviews = [
         rating: 5,
     },
     {
-        name: 'Murugan',
+        name: 'Priya',
         image: Murugan,
         message: 'A fantastic experience that exceeded my expectations!',
-        rating: 5,
+        rating: 3.5,
     }
     
 ];

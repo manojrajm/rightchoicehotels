@@ -18,15 +18,15 @@ const Header = () => {
                 ☰
             </button>
             <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
-                <button className="close-btn" onClick={toggleMenu}>✖</button>
-                <span>Home</span>
-                <span>Rooms </span>
-                <span>About Us</span>
-                <span>Contact Us</span>
-                <span>Login</span>
-                <span>Signup</span>
-                <button className="book-now">Book Now</button>
-            </nav>
+    <button className="close-btn" onClick={toggleMenu}>✖</button>
+    <a href='#'>Home</a>
+    <a href='#rooms'>Rooms</a>
+    <a href='#about'>About</a>
+    <a href='#booking'>Booking</a>
+    <a href='#places'>Places</a>
+    <a href='#contact'>Contact</a>
+    <button className="book-now"><a href='#booking'>Book Now</a></button>
+</nav>
         </header>
     );
 };

@@ -56,7 +56,7 @@ const RameswaramPlaces = () => {
   ];
 
   return (
-    <main className="places">
+    <main className="places"id='places'>
       <div className="container">
         <h1>Explore Rameswaram</h1>
         <div className="places-grid">

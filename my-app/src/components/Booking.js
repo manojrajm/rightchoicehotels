@@ -232,7 +232,7 @@ const Booking = () => {
   };
 
   return (
-    <div className="booking-container">
+    <div className="booking-container"id='booking'>
       <h1 style={{color:'yellow'}}>Choose Your Booking Type</h1>
       <div className="booking-options">
         <button className="booking-button" onClick={handleTravelBooking}>

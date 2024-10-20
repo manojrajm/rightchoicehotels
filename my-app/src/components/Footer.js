@@ -6,7 +6,7 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'; // Import Whats
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" id='contact'>
       <div className="footer-content">
         <div className="contact-info">
           <h3>Contact Us</h3>

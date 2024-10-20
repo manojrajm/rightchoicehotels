@@ -44,13 +44,14 @@
     left: 0; /* Slide in */
 }
 
-.nav span, .book-now {
-    cursor: pointer;
-    transition: color 0.3s;
-    font-size: 1.2em; /* Font size for better readability */
+.nav a {
+    color: white; /* Change link color to white */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
 }
 
-.nav span:hover {
+/* Hover effect for links */
+.nav a:hover {
     color: turquoise; /* Change color on hover */
 }
 

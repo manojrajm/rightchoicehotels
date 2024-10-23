@@ -49,7 +49,7 @@ const Booking = () => {
 
   const sendMail = async (details) => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/send-email`, {
+      const response = await fetch(`https://rightchoicehotels-1.onrender.com/api/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

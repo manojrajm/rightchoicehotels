@@ -22,7 +22,7 @@ const Footer = () => {
             <FontAwesomeIcon icon={faMapMarkerAlt} /> 21/90-C-5, Eswariamman Kovil Street Rameswaram-623 526
           </p>
           <p>
-            <FontAwesomeIcon icon={faBed} /> Book a Room: <a href="/booking">Book Now</a>
+            <FontAwesomeIcon icon={faBed} /> Book a Room: <a href="#booking">Book Now</a>
           </p>
           <p>
             <FontAwesomeIcon icon={faWhatsapp} /> 
